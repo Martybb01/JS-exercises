@@ -1,10 +1,10 @@
-const summa = function (a, b) {
-  return a + b;
-};
+// const sum = function (a, b) {
+//   return a + b;
+// };
 
-const logga = function (value) {
-  console.log(value);
-};
+// const log = function (value) {
+//   console.log(value);
+// };
 
 const sum = (a, b) => {
   return a + b;
