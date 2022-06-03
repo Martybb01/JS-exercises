@@ -1,13 +1,3 @@
-// function uncompletedNotes(notes) {
-//   return notes.map(function (note) {
-//     if (notes[0].todos[0].done === false) {
-//       return "Note: " + note.description + " is not done yet.";
-//     } else {
-//       return "Note: " + note.description + " is done.";
-//     }
-//   });
-// }
-
 const notes = [
   {
     id: 1,
