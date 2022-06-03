@@ -63,8 +63,7 @@ function uncompletedNotes(notes) {
     for (let j = 0; j < notes[i].todos.length; j++) {
       if (notes[i].todos[j].done === false) {
         console.log("Note: " + notes[i].description + " is not done yet.");
-        return notes[i]; // return the note object
-        // return notes[i].description; // return only the note description (es. Workout program)
+        return notes[i].todos[j]; // return the first uncompleted todo
       }
     }
   }
