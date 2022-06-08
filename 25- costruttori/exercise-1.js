@@ -1,13 +1,23 @@
 const person = {
+  firstName,
+  lastName,
+  fName,
+  lName,
   get fName() {
     return this.firstName;
   },
+  /**
+   * @param {any} fName
+   */
   set fName(fName) {
     return (this.firstName = fName);
   },
   get lName() {
     return this.lastName;
   },
+  /**
+   * @param {any} lName
+   */
   set lName(lName) {
     return (this.lastName = lName);
   },
