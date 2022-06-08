@@ -33,3 +33,9 @@ function filterAge() {
   return adults;
 }
 console.log(filterAge());
+
+// METODO 3 (metodo filter compattato con arrow function)
+function filterAdult() {
+  return persons.filter((item) => item.age >= 18);
+}
+console.log(filterAdult());
