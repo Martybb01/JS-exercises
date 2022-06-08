@@ -2,7 +2,7 @@ function greet(greeting) {
   // greeting --> scope outer function
   return function (name) {
     // name --> scope inner function
-    return greeting + ", " + name;
+    return `${greeting} ${name}`;
   };
 }
 
