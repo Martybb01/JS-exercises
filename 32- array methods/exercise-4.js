@@ -60,7 +60,6 @@ function uncompletedNotes(notes) {
 }
 
 const notesInProgress = uncompletedNotes(notes);
-console.log("All notes: ", notes);
 console.log("Notes In Progress: ", notesInProgress);
 
 console.log(notes[0].todos[0].done); // log di prova
