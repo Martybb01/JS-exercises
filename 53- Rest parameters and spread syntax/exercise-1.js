@@ -14,3 +14,13 @@ function sum2(...nums) {
 }
 console.log(sum2(1, 2, 3, 4, 5, 20, 40, 55)); // 130
 console.log(sum2(1, 2, 3, 4, 5)); // 15
+
+// METODO 3
+function sum3(...nums) {
+  let sum = 0;
+  for (let num of nums) {
+    sum += num;
+  }
+  return sum;
+}
+console.log(sum3(1, 2, 3, 4, 5, 20, 40, 55)); // 130
