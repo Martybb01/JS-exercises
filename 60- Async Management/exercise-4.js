@@ -58,6 +58,7 @@ function fetchJobById(id) {
   });
 }
 
+// STAMPA L'OGGETTO
 Promise.all([fetchPersonById(2), fetchJobById(2)])
   .then(([person, job]) => {
     console.log(person);
@@ -66,3 +67,10 @@ Promise.all([fetchPersonById(2), fetchJobById(2)])
   .catch((err) => {
     console.error(err);
   });
+
+// STAMPA LA STRINGA
+Promise.all([fetchPersonById(1), fetchJobById(1)]).then((values) => {
+  const job = values.find((value) => value.jobTitle);
+  const person = values.find((value) => value.firstName);
+  console.log(`${person.firstName} ${person.lastName} is a ${job.jobTitle}`);
+});
