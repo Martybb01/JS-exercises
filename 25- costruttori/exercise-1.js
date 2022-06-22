@@ -3,6 +3,7 @@ const person = {
   lastName,
   fName,
   lName,
+  fullName,
   get fName() {
     return this.firstName;
   },
