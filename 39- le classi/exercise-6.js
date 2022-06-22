@@ -1,13 +1,10 @@
 class Square {
-  side;
   constructor(side) {
     this.side = side;
   }
 }
 
 class Rectangle {
-  width;
-  height;
   constructor(width, height) {
     this.width = width;
     this.height = height;
@@ -15,7 +12,6 @@ class Rectangle {
 }
 
 class Circle {
-  radius;
   constructor(radius) {
     this.radius = radius;
   }
