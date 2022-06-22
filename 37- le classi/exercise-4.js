@@ -3,12 +3,20 @@ class BankAccount {
     this.balance = balance;
   }
   deposit(amount) {
-    this.balance += amount;
-    return this.balance;
+    if (typeof amount === "number") {
+      this.balance += amount;
+      return this.balance;
+    } else {
+      console.log("please enter a number");
+    }
   }
   withdraw(amount) {
-    this.balance -= amount;
-    return this.balance;
+    if (typeof amount === "number") {
+      this.balance -= amount;
+      return this.balance;
+    } else {
+      console.log("please enter a number");
+    }
   }
   view() {
     console.log(`your balance is ${this.balance}`);
@@ -18,5 +26,6 @@ class BankAccount {
 const bankAccount = new BankAccount(1000);
 bankAccount.deposit(500);
 bankAccount.deposit(200);
+bankAccount.deposit("ciao");
 bankAccount.withdraw(800);
 bankAccount.view(); // your balance is 900
