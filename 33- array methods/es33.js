@@ -1,10 +1,9 @@
 function firstUncompletedNote(notes) {
   return notes.find((note) => {
-    return note.todos.find((todo) => {
-      return todo.done === false;
-    });
+    return note.todos.find((todo) => todo.done === false);
   });
 }
+// al posto del secondo find avrei potuto usare anche some
 
 const notes = [
   {
