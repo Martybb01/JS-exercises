@@ -1,0 +1,56 @@
+<html>
+
+<body>
+  <div id="container">
+    <form>
+      <div>
+        <label>Title</label>
+        <input type="text" id="todo-title" />
+      </div>
+      <div>
+        <label>Completed</label>
+        <input type="checkbox" id="todo-completed" />
+      </div>
+
+      <button type="submit" id="submit-todo"></button>
+    </form>
+  </div>
+</body>
+
+</html>
+
+<script>
+  const textTitle = document.querySelector("#todo-title");
+  const checkbox = document.querySelector("#todo-completed");
+  const submitButton = document.querySelector("#submit-todo");
+
+  class postObj {
+    constructor(title, completed) {
+      this.title = title;
+      this.completed = completed;
+    }
+  }
+
+  const newObjPost = new postObj(textTitle.value, checkbox.value);
+
+  async function newPost() {
+    try {
+      const url = "https://jsonplaceholder.typicode.com/posts";
+      let response = await fetch(url, {
+        method: "POST",
+        headers: {
+          "Content-type": "application/json;charset=utf-8",
+        },
+        body: JSON.stringify(newObjPost)
+      });
+      console.log(newObjPost);
+    } catch (err) {
+      console.log("errore nella creazione del post");
+    }
+  }
+
+  submitButton.addEventListener("submit", (e) => {
+    e.preventDefault();
+    newPost();
+  })
+</script>
