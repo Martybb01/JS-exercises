@@ -22,20 +22,20 @@
 </html>
 
 <script>
-  const name = document.getElementById("firstName").getAttribute("value");
-  const surname = document.getElementById("lastName").getAttribute("value");
+  const firstName = document.getElementById("firstName").getAttribute("value");
+  const lastName = document.getElementById("lastName").getAttribute("value");
   const age = document.getElementById("age").getAttribute("value");
   const form = document.getElementById("container").firstElementChild;
 
   class Person {
-    constructor(name, surname, age) {
-      this.name = name;
-      this.surname = surname;
+    constructor(firstName, lastName, age) {
+      this.firstName = firstName;
+      this.lastName = lastName;
       this.age = age;
     }
   }
 
-  const personObj = new Person(name, surname, age);
+  const personObj = new Person(firstName, lastName, age);
   const personJson = JSON.stringify(personObj);
 
   form.setAttribute("data-person", personJson);
