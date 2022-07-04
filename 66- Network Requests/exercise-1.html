@@ -9,20 +9,23 @@
 </html>
 
 <script>
-  const ulEl = document.querySelector(".todo-list");
+  const $ulEl = document.querySelector(".todo-list");
+  const URL = "https://jsonplaceholder.typicode.com/todos";
 
   async function fetchTodo() {
-    const url = "https://jsonplaceholder.typicode.com/todos";
-    const response = await fetch(url);
-    const post = await response.json();
-    const postObj = JSON.parse(JSON.stringify(post));
+    try {
+      const response = await fetch(URL);
+      const post = await response.json();
+      const postObj = JSON.parse(JSON.stringify(post));
 
-    postObj.forEach((element) => {
-      const liEl = document.createElement("li");
-      liEl.textContent = element.title;
-      ulEl.append(liEl);
-    })
-
+      postObj.forEach((element) => {
+        const $liEl = document.createElement("li");
+        $liEl.textContent = element.title;
+        $ulEl.append($liEl);
+      })
+    } catch (err) {
+      console.log(err);
+    }
   }
 
   fetchTodo();

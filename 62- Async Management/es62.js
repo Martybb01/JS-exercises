@@ -41,7 +41,7 @@ function fetchPersonById(id) {
 async function handlePerson() {
   try {
     const personJson = await fetchPersonById(2);
-    const person = await JSON.parse(personJson);
+    const person = JSON.parse(personJson); // senza await perchè JSON.parse lavora in sync
     console.log(person);
   } catch (err) {
     console.log(err);

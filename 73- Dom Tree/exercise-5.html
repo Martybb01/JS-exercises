@@ -13,19 +13,18 @@
 </html>
 
 <script>
-  const tableBody = document.querySelector("tbody");
-  const addButton = document.querySelector("#add-row");
+  const $tableBody = document.querySelector("tbody");
+  const $addButton = document.querySelector("#add-row");
 
-  addButton.addEventListener("click", addRow);
 
   function addRow() {
-    const tableRow = document.createElement("tr");
-    tableRow.innerHTML =
+    const $tableRow = document.createElement("tr");
+    $tableRow.innerHTML =
       `<td>firstName</td>
       <td>lastName</td>
       <td>age</td>`;
-    tableBody.append(tableRow);
+    $tableBody.append($tableRow);
   }
 
-
+  $addButton.addEventListener("click", addRow);
 </script>

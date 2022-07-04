@@ -7,23 +7,24 @@
 </html>
 
 <script>
-  const container = document.querySelector("#container");
+  const $container = document.querySelector("#container");
+
+  const URL = "https://jsonplaceholder.typicode.com/todos/4";
 
   async function fetchTodo() {
     try {
-      const url = "https://jsonplaceholder.typicode.com/todos/4";
-      let response = await fetch(url);
+      let response = await fetch(URL);
       let todo = await response.json();
       let todoObj = JSON.parse(JSON.stringify(todo))
 
-      const titleEl = document.createElement("h2");
-      titleEl.innerText = todoObj.title;
-      container.append(titleEl);
+      const $titleEl = document.createElement("h2");
+      $titleEl.innerText = todoObj.title;
+      $container.append($titleEl);
 
-      const checkbox = document.createElement("input");
-      checkbox.setAttribute("type", "checkbox");
-      checkbox.setAttribute("checked", todoObj.completed);
-      titleEl.append(checkbox)
+      const $checkbox = document.createElement("input");
+      $checkbox.setAttribute("type", "checkbox");
+      $checkbox.setAttribute("checked", todoObj.completed);
+      $titleEl.append($checkbox)
 
     } catch (err) {
       console.log("errore");

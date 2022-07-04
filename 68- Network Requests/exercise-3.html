@@ -20,9 +20,11 @@
 </html>
 
 <script>
-  const textTitle = document.querySelector("#todo-title");
-  const checkbox = document.querySelector("#todo-completed");
-  const submitButton = document.querySelector("#submit-todo");
+  const $textTitle = document.querySelector("#todo-title");
+  const $checkbox = document.querySelector("#todo-completed");
+  const $submitButton = document.querySelector("#submit-todo");
+
+  const URL = "https://jsonplaceholder.typicode.com/posts";
 
   class postObj {
     constructor(title, completed) {
@@ -31,12 +33,11 @@
     }
   }
 
-  const newObjPost = new postObj(textTitle.value, checkbox.value);
+  const newObjPost = new postObj($textTitle.value, $checkbox.value);
 
   async function newPost() {
     try {
-      const url = "https://jsonplaceholder.typicode.com/posts";
-      let response = await fetch(url, {
+      let response = await fetch(URL, {
         method: "POST",
         headers: {
           "Content-type": "application/json;charset=utf-8",
@@ -49,7 +50,7 @@
     }
   }
 
-  submitButton.addEventListener("submit", (e) => {
+  $submitButton.addEventListener("submit", (e) => {
     e.preventDefault();
     newPost();
   })

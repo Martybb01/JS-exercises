@@ -16,9 +16,9 @@
 </html>
 
 <script>
-  const heroList = document.querySelectorAll(".hero-list-item");
+  const $heroList = document.querySelectorAll(".hero-list-item");
 
-  heroList.forEach((item) => {
+  $heroList.forEach((item) => {
     item.addEventListener("mouseenter", () => item.style.color = "red");
     item.addEventListener("mouseleave", () => item.style.color = "black");
   })
