@@ -1,28 +1,34 @@
 <html>
-  <body>
-    <div id="container">
-      <button type="button" id="fetch-post">Fetch Post</button>
-      <button type="button" id="save-post">Save Post on LocalStorage</button>
-    </div>
-  </body>
+
+<body>
+  <div id="container">
+    <button type="button" id="fetch-post">Fetch Post</button>
+    <button type="button" id="save-post">Save Post on LocalStorage</button>
+  </div>
+</body>
+
 </html>
 
 <script>
-  let fetchButton = document.querySelector("#fetch-post");
-  let saveButton = document.querySelector("#save-post");
+  const URL = "https://jsonplaceholder.typicode.com/posts";
+  const $fetchButton = document.querySelector("#fetch-post");
+  const $saveButton = document.querySelector("#save-post");
 
-  fetchButton.addEventListener("click", fetchPost);
-  saveButton.addEventListener("click", savePost);
-
-  async function fetchPost() {
-    let url = "https://jsonplaceholder.typicode.com/posts/1";
-    let response = await fetch(url);
-    let post = await response.json();
-    return post;
+  async function fetchPost(id) {
+    try {
+      const response = await fetch(`${URL}/${id}`);
+      return await response.json();
+    } catch (err) {
+      console.log(err);
+    }
   }
 
   async function savePost() {
-    let post = await fetchPost();
+    const post = await fetchPost(1);
     localStorage.setItem("post", JSON.stringify(post));
   }
+
+  $fetchButton.addEventListener("click", fetchPost);
+  $saveButton.addEventListener("click", savePost);
+
 </script>
