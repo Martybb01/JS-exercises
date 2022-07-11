@@ -26,14 +26,18 @@
 
   const URL = "https://jsonplaceholder.typicode.com/posts";
 
-  class postObj {
-    constructor(title, completed) {
-      this.title = title;
-      this.completed = completed;
-    }
+  // class postObj {
+  //   constructor(title, completed) {
+  //     this.title = title;
+  //     this.completed = completed;
+  //   }
+  // }
+  const newObjPost = {
+    title: $textTitle.value,
+    completed: $checkbox.value
   }
 
-  const newObjPost = new postObj($textTitle.value, $checkbox.value);
+  //const newObjPost = new postObj($textTitle.value, $checkbox.value);
 
   async function newPost() {
     try {

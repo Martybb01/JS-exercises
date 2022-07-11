@@ -15,7 +15,7 @@
     try {
       let response = await fetch(URL);
       let todo = await response.json();
-      let todoObj = JSON.parse(JSON.stringify(todo))
+
 
       const $titleEl = document.createElement("h2");
       $titleEl.innerText = todoObj.title;
